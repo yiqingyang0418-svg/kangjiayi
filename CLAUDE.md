@@ -20,9 +20,10 @@ project:
 | **字体** | Google Fonts（`ZCOOL KuaiLe` 站酷快乐体 + `M PLUS Rounded 1c`） |
 | **运行方式** | **双击 `index.html` 直接打开**，不需要服务器、不需要 npm |
 | **浏览器兼容** | 现代浏览器（Chrome/Edge/Firefox/Safari） |
+| **部署** | GitHub Pages：`https://yiqingyang0418-svg.github.io/kangjiayi/`（main 分支自动部署） |
 | **项目标识** | `kangjiayi-journal` — 所有项目文件与记忆均携带此标记 |
 | **设计主题** | 日系少女手账（Kawaii Journal）— 软萌治愈系 |
-| **当前状态** | v7 照片填充 + 标签 + BGM 接入（2026-08-19），5 板块，档案/兴趣/照片/BGM 全部就位 |
+| **当前状态** | v8 上线部署 + 微信分享卡片（2026-08-19），5 板块，档案/兴趣/照片/BGM 全部就位 |
 
 ## 文件结构
 
@@ -106,6 +107,7 @@ project:
 4. **颜色统一用 CSS 变量**——不硬编码色值
 5. **动效走 transform/opacity**，尊重 `prefers-reduced-motion` 降级
 6. **真实照片/素材**放入 `images/` 下对应子目录，替换占位块即可；SVG 符号无需改动
+7. **部署**：`git push origin main` → GitHub Pages 自动部署，1-2 分钟后 `https://yiqingyang0418-svg.github.io/kangjiayi/` 生效
 
 ## 项目标识约定
 
@@ -176,6 +178,13 @@ project:
 - 「小世界」卡片「化妆」改名「痞帅」（对应照片文件夹）；新增 `.hero-avatar img` 等 `object-fit:cover` 填充规则
 - BGM 接入：`<audio id="bgm" src="BGM/网站BGM2.m4a" loop>` + `#bgmBtn` 播放/暂停切换 + toast
 - sw 缓存版本 v6→v7
+
+### 2026-08-19 · v8 上线部署 + 微信分享卡片
+- 部署到 GitHub Pages：`https://yiqingyang0418-svg.github.io/kangjiayi/`（`main` 分支根目录自动部署，`git push` 后 1-2 分钟生效）
+- `index.html` `<head>` 新增 Open Graph 元信息（`og:title` / `og:description` / `og:image` / `og:type` / `og:locale`）+ `apple-touch-icon`，微信转发链接时显示标题/描述/缩略图
+- 封面图复制为 `images/og-image.jpg`（英文文件名，供微信抓取缩略图）
+- 新增 `.claude/memory/deployment-and-sharing.md`（部署地址 + 用户触发词）
+- sw 缓存版本 v7→v8
 
 ## 待办 / 待补充清单
 

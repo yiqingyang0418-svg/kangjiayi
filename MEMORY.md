@@ -12,3 +12,4 @@ project: kangjiayi-journal
 - [里程碑与进度记录](.claude/memory/v1-skeleton-milestone.md) — v1 骨架 → v7 照片填充 + 标签 + BGM，5 板块全部就位
 - [小世界兴趣卡片墙](.claude/memory/world-hobby-cards.md) — 6 张爱好卡片各 4 照片位，「动漫」改名「追剧」，「化妆」改名「痞帅」
 - [v7 照片填充 + 标签 + BGM](.claude/memory/photos-bgm-fill.md) — 关于我 4 标签、照片按板块填充（29 图 + 3 视频）、BGM 接入
+- [部署与微信分享](.claude/memory/deployment-and-sharing.md) — GitHub Pages 部署，链接 https://yiqingyang0418-svg.github.io/kangjiayi/
