@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>康家怡の小世界 · 喵界巨星</title>
+<meta name="description" content="康家怡的个人网站 —— 准大学生，喜欢小猫和追剧，这里是我的小世界。">
+<meta name="theme-color" content="#FFAFC5">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="康家怡の小世界">
+<meta property="og:description" content="准大学生康家怡的小世界 · 撸猫追剧 · 元气满满">
+<meta property="og:image" content="images/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<link rel="apple-touch-icon" href="images/og-image.jpg">
+<style>
+/* ============ 基础与变量 ============ */
+:root{
+  --sakura:#FFAFC5; --sakura-deep:#FF8FAB;
+  --mint:#A9E5C3;  --mint-deep:#7ED4A6;
+  --taro:#C9B6E4;  --taro-deep:#B29BD4;
+  --lemon:#FFD98E; --sky:#A8D8EA;
+  --cream:#FFF9F2; --card:#FFFFFF;
+  --ink:#6B4F4A;    --ink-soft:#9A7E76;
+  --line:rgba(107,79,74,.14);
+  --shadow:0 10px 30px -12px rgba(107,79,74,.28);
+  --shadow-soft:0 6px 18px -10px rgba(107,79,74,.22);
+  --r-lg:28px; --r-md:20px; --r-sm:14px;
+  --font-title:'ZCOOL KuaiLe','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --font-body:'M PLUS Rounded 1c','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background-color:var(--cream);
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(255,175,197,.12), transparent 42%),
+    radial-gradient(circle at 88% 22%, rgba(169,229,195,.12), transparent 40%),
+    radial-gradient(circle at 50% 88%, rgba(201,182,228,.14), transparent 46%),
+    radial-gradient(rgba(107,79,74,.055) 1.1px, transparent 1.1px);
+  background-size:auto,auto,auto,24px 24px;
+  background-attachment:fixed;
+  line-height:1.75;
+  overflow-x:hidden;
+}
+::selection{background:var(--sakura);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section{scroll-margin-top:92px;position:relative}
+.container{width:min(1080px,92%);margin:0 auto}
+
+/* ============ 通用装饰符号 ============ */
+.deco{display:inline-block;flex:none}
+
+/* ============ 导航 ============ */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,249,242,.82);
+  backdrop-filter:saturate(160%) blur(12px);
+  -webkit-backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:2px dashed var(--line);
+}
+.nav-inner{width:min(1180px,94%);margin:0 auto;display:flex;align-items:center;gap:18px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-title);font-size:21px;color:var(--sakura-deep);white-space:nowrap}
+.brand .paw{width:30px;height:30px;color:var(--sakura-deep)}
+.nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{
+  font-size:14.5px;padding:7px 12px;border-radius:999px;color:var(--ink);
+  transition:.25s;position:relative;
+}
+.nav-links a:hover{background:var(--sakura);color:#fff;transform:translateY(-2px)}
+.nav-links a.on{background:var(--mint);color:#3d5c4d}
+.nav-toggle{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.nav-toggle span{display:block;width:26px;height:3px;border-radius:3px;background:var(--ink);margin:5px 0;transition:.3s}
+body.menu-open .nav-toggle span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+body.menu-open .nav-toggle span:nth-child(2){opacity:0}
+body.menu-open .nav-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ============ 区块标题 ============ */
+.sec{ padding:86px 0 20px }
+.sec-head{text-align:center;margin-bottom:46px}
+.sec-head .sec-icon{display:inline-flex;width:56px;height:56px;border-radius:18px;background:#fff;box-shadow:var(--shadow-soft);align-items:center;justify-content:center;transform:rotate(-6deg);margin-bottom:14px}
+.sec-head .sec-icon svg{width:34px;height:34px;color:var(--sakura-deep)}
+.sec-head h2{font-family:var(--font-title);font-size:clamp(28px,4.5vw,40px);letter-spacing:.5px;color:var(--ink);display:inline-block;position:relative}
+.sec-head h2::after{content:"";position:absolute;left:6%;right:6%;bottom:-9px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='12' viewBox='0 0 120 12'%3E%3Cpath d='M2 8 Q 16 2 30 8 T 58 8 T 86 8 T 118 6' fill='none' stroke='%23FFAFC5' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.sec-head .sec-en{display:block;margin-top:18px;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ============ 封面 Hero ============ */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;position:relative}
+.hero-tape{position:absolute;width:130px;height:34px;top:96px;opacity:.9}
+.hero-tape.l{left:3%;transform:rotate(-6deg)}
+.hero-tape.r{right:3%;transform:rotate(5deg)}
+.tape{position:absolute;background:linear-gradient(100deg,var(--sakura),var(--taro));box-shadow:0 3px 8px -3px rgba(107,79,74,.4);opacity:.86}
+.tape::before,.tape::after{content:"";position:absolute;top:0;bottom:0;width:14px;background:rgba(255,255,255,.28)}
+.tape::before{left:6px}.tape::after{right:6px}
+.hero-avatar{width:150px;height:150px;margin:0 auto 26px;position:relative}
+.hero-avatar .ring{position:absolute;inset:-12px;border-radius:50%;border:2.5px dashed var(--sakura);animation:spin 26s linear infinite}
+.hero-avatar .avatar-bg{position:absolute;inset:0;border-radius:50%;background:linear-gradient(160deg,#fff,#ffeef4);box-shadow:var(--shadow)}
+.hero-avatar svg{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px)}
+.hero-avatar img{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);object-fit:cover;border-radius:50%}
+.hero .hi{font-size:15px;letter-spacing:.2em;color:var(--sakura-deep)}
+.hero h1{font-family:var(--font-title);font-size:clamp(40px,8vw,76px);line-height:1.12;margin:10px 0 6px;background:linear-gradient(120deg,var(--sakura-deep),var(--taro-deep) 60%,var(--sakura-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 rgba(255,175,197,.25))}
+.hero .sub{font-size:clamp(15px,2.4vw,19px);color:var(--ink-soft);margin-bottom:34px}
+.hero .sub b{color:var(--sakura-deep);font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 30px;border-radius:999px;background:var(--sakura);color:#fff;font-weight:700;font-size:16px;box-shadow:0 8px 20px -8px var(--sakura-deep);transition:.3s;border:none;cursor:pointer}
+.btn:hover{transform:translateY(-3px) scale(1.02);background:var(--sakura-deep);box-shadow:0 12px 26px -8px var(--sakura-deep)}
+.btn.ghost{background:#fff;color:var(--sakura-deep);box-shadow:var(--shadow-soft);border:2px solid var(--sakura)}
+.btn.ghost:hover{background:var(--sakura);color:#fff}
+.hero .scroll-hint{margin-top:44px;font-size:13px;color:var(--ink-soft)}
+.hero .scroll-hint svg{width:22px;height:22px;color:var(--sakura-deep);animation:bounce 1.8s infinite;display:block;margin:6px auto 0}
+/* 漂浮贴纸 */
+.floaty{position:absolute;z-index:2;color:var(--sakura-deep);animation:floaty 5s ease-in-out infinite}
+.floaty svg{filter:drop-shadow(0 3px 5px rgba(107,79,74,.18))}
+.f1{top:22%;left:9%;width:44px;color:var(--lemon)}
+.f2{top:30%;right:10%;width:38px;color:var(--sakura)}
+.f3{top:62%;left:14%;width:30px;color:var(--mint-deep)}
+.f4{top:66%;right:14%;width:42px;color:var(--taro)}
+.f5{top:46%;left:5%;width:26px;color:var(--sky)}
+.f6{top:48%;right:5%;width:28px;color:var(--sakura-deep)}
+
+/* ============ 通用卡片 ============ */
+.card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);border:2px solid #fff;position:relative}
+
+/* ============ 关于我 ============ */
+.about-grid{display:grid;grid-template-columns:320px 1fr;gap:34px;align-items:start}
+.about-photo{position:relative}
+.about-photo .pic{aspect-ratio:1/1.15;border-radius:var(--r-lg);background:linear-gradient(165deg,#ffeef4,#eaf8f1);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;padding:28px;position:relative;overflow:hidden}
+.about-photo .pic svg{width:80%;height:80%}
+.about-photo .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-photo .tape{position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);width:112px;height:30px;border-radius:4px;z-index:2}
+.about-photo .cap{text-align:center;margin-top:14px;font-family:var(--font-title);color:var(--ink-soft);font-size:15px}
+.profile-card{padding:30px 34px}
+.profile-card h3{font-family:var(--font-title);font-size:24px;margin-bottom:4px}
+.profile-card .role{color:var(--sakura-deep);font-size:14px;margin-bottom:18px}
+.rows{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
+.row{display:flex;align-items:center;gap:10px;font-size:15px}
+.row .k{color:var(--ink-soft);flex:none;width:52px}
+.row .v{font-weight:700}
+.chip{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:none;box-shadow:var(--shadow-soft)}
+.chip svg{width:18px;height:18px}
+.card-tape{top:-12px;right:30px;width:112px;height:30px;border-radius:4px;transform:rotate(4deg);opacity:.9}
+.profile-sig{margin-top:20px;padding-top:16px;border-top:2px dashed var(--line);font-family:var(--font-title);color:var(--sakura-deep);font-size:15px;letter-spacing:.06em;text-align:right}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.tag{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:999px;font-family:var(--font-title);font-size:14px;letter-spacing:.02em;box-shadow:var(--shadow-soft);border:2px solid #fff;transition:transform .3s}
+.tag:nth-child(1){transform:rotate(-2deg)}
+.tag:nth-child(2){transform:rotate(1.5deg)}
+.tag:nth-child(3){transform:rotate(-1.5deg)}
+.tag:nth-child(4){transform:rotate(2deg)}
+.tag:hover{transform:rotate(0deg) translateY(-3px) scale(1.06)}
+
+/* ============ 小世界（兴趣卡片墙） ============ */
+.hobby-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.hobby-card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;transition:.3s}
+.hobby-card:hover{transform:translateY(-6px)}
+.hobby-head{display:flex;align-items:center;gap:12px;padding:15px 20px}
+.hobby-head svg{width:30px;height:30px;color:rgba(255,255,255,.95);flex:none}
+.hobby-txt{display:flex;flex-direction:column;line-height:1.35;min-width:0}
+.hobby-txt b{font-family:var(--font-title);font-size:19px;font-weight:400}
+.hobby-txt small{font-family:var(--font-body);font-size:12px;opacity:.92}
+.hobby-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 16px 18px}
+.hobby-ph{aspect-ratio:1/1;border-radius:12px;border:2px dashed var(--line);background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:var(--ink-soft);transition:.3s;position:relative;overflow:hidden}
+.hobby-ph:hover{border-color:var(--sakura);background:#fff}
+.hobby-ph svg{width:24px;height:24px;color:var(--sakura)}
+.hobby-ph span{font-size:11px}
+.hobby-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.s-pink{background:linear-gradient(150deg,var(--sakura),var(--sakura-deep));color:#fff}
+.s-mint{background:linear-gradient(150deg,var(--mint),var(--mint-deep));color:#fff}
+.s-taro{background:linear-gradient(150deg,var(--taro),var(--taro-deep));color:#fff}
+.s-lemon{background:linear-gradient(150deg,var(--lemon),#f6c55f);color:#8a5a1f}
+.s-sky{background:linear-gradient(150deg,var(--sky),#86c3e0);color:#24536b}
+
+/* ============ 相册 ============ */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.polaroid{background:#fff;padding:12px 12px 16px;border-radius:8px;box-shadow:var(--shadow);transform:rotate(var(--rot,0deg));transition:.35s}
+.polaroid:hover{transform:rotate(0deg) translateY(-8px) scale(1.03)!important;z-index:3}
+.polaroid .ph{aspect-ratio:1/1;border-radius:4px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.polaroid .ph svg{width:44%;height:44%;color:rgba(255,255,255,.95)}
+.polaroid .ph img,.polaroid .ph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.polaroid .cap{padding-top:10px;text-align:center;font-size:13.5px;font-family:var(--font-title);color:var(--ink)}
+.gp1{background:linear-gradient(160deg,#ffe6ee,#ffc9d8)}.gp2{background:linear-gradient(160deg,#eaf8f1,#c8e8d7)}
+.gp3{background:linear-gradient(160deg,#f0e9fb,#dccdee)}.gp4{background:linear-gradient(160deg,#fff4dc,#ffe3b0)}
+.gp5{background:linear-gradient(160deg,#e7f4fa,#c6e4f0)}.gp6{background:linear-gradient(160deg,#ffe9f2,#ffd3e0)}
+
+/* ============ 留言 & 联系 ============ */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:880px;margin:0 auto}
+.contact-card{padding:clamp(26px,4vw,44px)}
+.contact-card h3{font-family:var(--font-title);font-size:clamp(22px,3.5vw,32px);margin-bottom:20px;text-align:center}
+.guest-note{
+  display:flex;align-items:center;justify-content:center;
+  min-height:clamp(240px,42vh,460px);
+  padding:clamp(28px,5vw,60px);
+  background:linear-gradient(160deg,#fff7ef 0%,#ffeef4 55%,#fdeef5 100%);
+  border:3px dashed var(--lemon);
+  border-radius:var(--r-lg);
+  box-shadow:var(--shadow-soft);
+}
+.guest-note .txt{
+  font-family:var(--font-title);
+  font-size:clamp(34px,8vw,78px);
+  line-height:1.5;
+  letter-spacing:.04em;
+  color:var(--sakura-deep);
+}
+.guest-note .ch{
+  display:inline-block;
+  animation:charBob 1.9s ease-in-out infinite;
+  animation-delay:calc(var(--i,0) * .09s);
+  text-shadow:0 2px 0 #fff,0 7px 16px rgba(255,143,171,.34);
+}
+@keyframes charBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-.24em)}}
+
+/* ============ 页脚 ============ */
+footer{padding:56px 0 120px;text-align:center;color:var(--ink-soft);font-size:13.5px}
+footer .paw-row{display:inline-flex;gap:8px;margin-bottom:12px}
+footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
+
+/* ============ 猫咪伴游 / 悬浮按钮 ============ */
+.mascot{position:fixed;right:22px;bottom:22px;z-index:90;width:74px;height:74px;cursor:pointer;filter:drop-shadow(0 8px 16px rgba(107,79,74,.25));transition:.3s}
+.mascot:hover{transform:translateY(-4px) scale(1.05)}
+.mascot .cat-bg{position:absolute;inset:0;background:#fff;border-radius:50%}
+.mascot svg{position:absolute;inset:0;width:100%;height:100%;animation:breathe 3.6s ease-in-out infinite}
+.mascot .bubble{position:absolute;right:86px;top:-6px;background:#fff;color:var(--ink);padding:9px 14px;border-radius:16px 16px 16px 4px;box-shadow:var(--shadow);font-size:13.5px;white-space:nowrap;opacity:0;transform:translateY(6px) scale(.9);transition:.28s;pointer-events:none;font-weight:700}
+.mascot .bubble.show{opacity:1;transform:none}
+.mascot .bubble::after{content:"";position:absolute;right:-6px;bottom:12px;width:12px;height:12px;background:#fff;transform:rotate(45deg);border-radius:2px}
+.floating-btns{position:fixed;right:22px;bottom:108px;z-index:90;display:flex;flex-direction:column;gap:12px}
+.fbtn{width:48px;height:48px;border-radius:50%;background:#fff;border:none;cursor:pointer;box-shadow:var(--shadow-soft);display:flex;align-items:center;justify-content:center;transition:.3s;color:var(--ink)}
+.fbtn:hover{transform:translateY(-3px);background:var(--sakura);color:#fff}
+.fbtn.playing{background:var(--sakura);color:#fff}
+.fbtn svg{width:22px;height:22px}
+#toTop{opacity:0;visibility:hidden;transition:.3s}
+#toTop.show{opacity:1;visibility:visible}
+
+/* ============ Toast ============ */
+.toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 22px;border-radius:999px;font-size:14px;opacity:0;transition:.3s;z-index:200;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+/* ============ 动画 ============ */
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05) translateY(-2px)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-16px) rotate(5deg)}}
+@keyframes sway{0%,100%{transform:rotate(var(--rot,0deg))}50%{transform:rotate(calc(var(--rot,0deg) + 2.5deg))}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ============ 响应式 ============ */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{max-width:340px;margin:0 auto}
+  .gallery{grid-template-columns:1fr 1fr}
+  .hobby-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;inset:66px 0 auto 0;background:var(--cream);flex-direction:column;gap:4px;padding:18px 22px 26px;border-bottom:2px dashed var(--line);transform:translateY(-120%);transition:.35s;box-shadow:var(--shadow)}
+  body.menu-open .nav-links{transform:none}
+  .nav-links a{font-size:17px;padding:12px 16px}
+  .gallery{grid-template-columns:1fr 1fr}
+  .hero-tape{display:none}
+}
+@media(max-width:520px){
+  .gallery{grid-template-columns:1fr}
+  .rows{grid-template-columns:1fr}
+  .hobby-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= 装饰符号库 ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- 猫咪 -->
+    <symbol id="cat" viewBox="0 0 120 120">
+      <path d="M23 44 L30 13 L52 35 Z" fill="#FFAFC5" stroke="#6B4F4A" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M97 44 L90 13 L68 35 Z" fill="#FFAFC5" stroke="#6B4F4A" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M31 35 L33.5 21 L43 33 Z" fill="#FF8FAB"/>
+      <path d="M89 35 L86.5 21 L77 33 Z" fill="#FF8FAB"/>
+      <ellipse cx="60" cy="64" rx="40" ry="38" fill="#FFFDF8" stroke="#6B4F4A" stroke-width="2.6"/>
+      <ellipse cx="34" cy="72" rx="7" ry="4.6" fill="#FFAFC5" opacity=".72"/>
+      <ellipse cx="86" cy="72" rx="7" ry="4.6" fill="#FFAFC5" opacity=".72"/>
+      <path d="M33 60 q6.5 7.5 13 0" fill="none" stroke="#6B4F4A" stroke-width="2.7" stroke-linecap="round"/>
+      <path d="M74 60 q6.5 7.5 13 0" fill="none" stroke="#6B4F4A" stroke-width="2.7" stroke-linecap="round"/>
+      <path d="M56.5 70 l3.5 3.2 3.5 -3.2 z" fill="#FF8FAB"/>
+      <path d="M60 73.5 q-4 5 -8 1.6 M60 73.5 q4 5 8 1.6" fill="none" stroke="#6B4F4A" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M20 62 L4 57.5 M20 70 L4 70 M100 62 L116 57.5 M100 70 L116 70" stroke="#6B4F4A" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+      <path d="M31 96 q29 13 58 0" fill="none" stroke="#FF8FAB" stroke-width="3.4" stroke-linecap="round"/>
+      <circle cx="60" cy="99" r="5.2" fill="#FFD98E" stroke="#6B4F4A" stroke-width="1.6"/>
+    </symbol>
+    <!-- 女孩头像 -->
+    <symbol id="girl" viewBox="0 0 120 120">
+      <path d="M40 19 L32 5 L54 12 Z" fill="#FFAFC5" stroke="#6B4F4A" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M80 19 L88 5 L66 12 Z" fill="#FFAFC5" stroke="#6B4F4A" stroke-width="2.6" stroke-linejoin="round"/>
+      <ellipse cx="60" cy="62" rx="41" ry="43" fill="#8a5a44"/>
+      <circle cx="60" cy="66" r="32" fill="#FFE8D6" stroke="#6B4F4A" stroke-width="2.6"/>
+      <path d="M28 52 a32 32 0 0 1 64 0 q-3 7 -7 7.5 q-8 -4 -16 -3 q-10 2 -20 0 q-9 -2 -21 -4.5 z" fill="#8a5a44"/>
+      <circle cx="49" cy="66" r="3.7" fill="#6B4F4A"/><circle cx="71" cy="66" r="3.7" fill="#6B4F4A"/>
+      <circle cx="50.3" cy="64.7" r="1.3" fill="#fff"/><circle cx="72.3" cy="64.7" r="1.3" fill="#fff"/>
+      <ellipse cx="41" cy="73" rx="6" ry="3.6" fill="#FFAFC5" opacity=".85"/>
+      <ellipse cx="79" cy="73" rx="6" ry="3.6" fill="#FFAFC5" opacity=".85"/>
+      <path d="M54 76.5 q6 5 12 0" fill="none" stroke="#6B4F4A" stroke-width="2.1" stroke-linecap="round"/>
+    </symbol>
+    <!-- 爪印 -->
+    <symbol id="paw" viewBox="0 0 40 40">
+      <ellipse cx="20" cy="24" rx="7.5" ry="6.2" fill="currentColor"/>
+      <ellipse cx="9" cy="12" rx="3.5" ry="4.2" fill="currentColor"/>
+      <ellipse cx="17" cy="8" rx="3.5" ry="4.2" fill="currentColor"/>
+      <ellipse cx="25" cy="8" rx="3.5" ry="4.2" fill="currentColor"/>
+      <ellipse cx="31" cy="13" rx="3.5" ry="4.2" fill="currentColor"/>
+    </symbol>
+    <!-- 爱心 -->
+    <symbol id="heart" viewBox="0 0 40 40">
+      <path d="M20 34 C8 26 3.5 17.5 6 11.5 C8.2 6.4 13.2 5.4 16.2 8.6 C18 6.7 20.6 5.6 23.8 8.6 C26.8 5.4 31.8 6.4 34 11.5 C36.5 17.5 32 26 20 34 Z" fill="currentColor"/>
+    </symbol>
+    <!-- 星星 -->
+    <symbol id="sparkle" viewBox="0 0 40 40">
+      <path d="M20 2 L23.6 15.4 L37 20 L23.6 24.6 L20 38 L16.4 24.6 L3 20 L16.4 15.4 Z" fill="currentColor"/>
+    </symbol>
+    <!-- 花朵 -->
+    <symbol id="flower" viewBox="0 0 40 40">
+      <g fill="currentColor">
+        <ellipse cx="20" cy="10" rx="5" ry="8.4"/><ellipse cx="20" cy="30" rx="5" ry="8.4"/>
+        <ellipse cx="10" cy="20" rx="8.4" ry="5"/><ellipse cx="30" cy="20" rx="8.4" ry="5"/>
+      </g>
+      <circle cx="20" cy="20" r="4.4" fill="#FFD98E"/>
+    </symbol>
+    <!-- 蛋糕（年龄） -->
+    <symbol id="cake" viewBox="0 0 40 40">
+      <rect x="8" y="24" width="24" height="8" rx="3" fill="currentColor"/>
+      <rect x="12" y="17" width="16" height="8" rx="3" fill="currentColor"/>
+      <rect x="18.7" y="9" width="2.6" height="8" rx="1.3" fill="currentColor"/>
+      <circle cx="20" cy="6.8" r="2.4" fill="currentColor"/>
+    </symbol>
+    <!-- 定位针（城市） -->
+    <symbol id="pin" viewBox="0 0 40 40">
+      <path fill-rule="evenodd" fill="currentColor" d="M20 4 C13 4 8 9.2 8 16.4 C8 25.6 20 36.5 20 36.5 C20 36.5 32 25.6 32 16.4 C32 9.2 27 4 20 4 Z M20 12.4 a4 4 0 1 0 0 8 a4 4 0 1 0 0 -8 Z"/>
+    </symbol>
+    <!-- 学士帽（身份） -->
+    <symbol id="grad" viewBox="0 0 40 40">
+      <path d="M20 8 L38 16 L20 24 L2 16 Z" fill="currentColor"/>
+      <path d="M12 21 v6 c0 3 3.6 5 8 5 s8 -2 8 -5 v-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M30 20 l4 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="34" cy="27" r="2" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= 导航 ================= -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#hero">
+      <svg class="paw"><use href="#paw"/></svg>
+      <span>康家怡の小世界</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="on">关于我</a>
+      <a href="#world">小世界</a>
+      <a href="#gallery">相册</a>
+      <a href="#contact">老易寄语</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= 封面 Hero ================= -->
+<section class="hero" id="hero">
+  <span class="hero-tape l tape"></span>
+  <span class="hero-tape r tape"></span>
+  <div class="floaty f1"><svg><use href="#flower"/></svg></div>
+  <div class="floaty f2"><svg><use href="#heart"/></svg></div>
+  <div class="floaty f3"><svg><use href="#sparkle"/></svg></div>
+  <div class="floaty f4"><svg><use href="#cat"/></svg></div>
+  <div class="floaty f5"><svg><use href="#paw"/></svg></div>
+  <div class="floaty f6"><svg><use href="#sparkle"/></svg></div>
+
+  <div class="container">
+    <div class="hero-avatar">
+      <span class="ring"></span>
+      <span class="avatar-bg"></span>
+      <img src="照片/封面照片/微信图片_20260819172525_22_6.jpg" alt="康家怡的头像">
+    </div>
+    <p class="hi">HI THERE ~</p>
+    <h1>康家怡の小世界</h1>
+    <p class="sub">世界上最最最可爱最最最萌的 <b>喵界巨星</b> 🐾</p>
+    <div>
+      <a class="btn" href="#about">走进我的小世界
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+    <div class="scroll-hint">
+      往下滑，有猫有惊喜
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 关于我 ================= -->
+<section class="sec" id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-icon"><svg><use href="#girl"/></svg></span>
+      <h2>关于我</h2>
+      <span class="sec-en">About Me</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="pic">
+          <span class="tape"></span>
+          <img src="照片/“关于我”人物照片/微信图片_20260819172527_24_6.jpg" alt="康家怡的照片">
+        </div>
+        <p class="cap">♪ 元气少女康家怡 ♪</p>
+      </div>
+      <div class="profile-card card reveal d1">
+        <span class="tape card-tape"></span>
+        <h3>康家怡</h3>
+        <div class="role">🐾 一名热爱生活的准大学生</div>
+        <div class="rows">
+          <div class="row"><span class="chip s-pink"><svg><use href="#cake"/></svg></span><span class="k">年龄</span><span class="v">永远 18 岁</span></div>
+          <div class="row"><span class="chip s-taro"><svg><use href="#sparkle"/></svg></span><span class="k">星座</span><span class="v">射手座 ♐</span></div>
+          <div class="row"><span class="chip s-sky"><svg><use href="#pin"/></svg></span><span class="k">城市</span><span class="v">永远的石家庄人</span></div>
+          <div class="row"><span class="chip s-mint"><svg><use href="#grad"/></svg></span><span class="k">身份</span><span class="v">准大学生 🎓</span></div>
+          <div class="row"><span class="chip s-lemon"><svg><use href="#heart"/></svg></span><span class="k">梦想</span><span class="v">世界和平 🕊</span></div>
+        </div>
+        <p class="profile-sig">— 元气满满 · 保持可爱 ♡</p>
+        <div class="tags">
+          <span class="tag s-pink">👑 王者手法少女</span>
+          <span class="tag s-lemon">🥭 芒果杀手</span>
+          <span class="tag s-mint">🧹 家政大师</span>
+          <span class="tag s-taro">💪 兼职高手</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 小世界（兴趣） ================= -->
+<section class="sec" id="world">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-icon"><svg><use href="#heart"/></svg></span>
+      <h2>我的小世界</h2>
+      <span class="sec-en">My Little World</span>
+    </div>
+    <div class="hobby-grid">
+      <div class="hobby-card reveal">
+        <div class="hobby-head s-pink">
+          <svg><use href="#cat"/></svg>
+          <div class="hobby-txt"><b>撸猫</b><small>人生第一大事</small></div>
+        </div>
+        <div class="hobby-photos">
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819172600_53_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192050_54_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192327_58_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192436_61_6.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="hobby-card reveal d1">
+        <div class="hobby-head s-mint">
+          <svg><use href="#heart"/></svg>
+          <div class="hobby-txt"><b>追剧</b><small>追剧停不下来</small></div>
+        </div>
+        <div class="hobby-photos">
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819172553_47_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819172556_50_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819192310_57_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819193410_63_6.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="hobby-card reveal d2">
+        <div class="hobby-head s-taro">
+          <svg><use href="#sparkle"/></svg>
+          <div class="hobby-txt"><b>痞帅</b><small>酷盖本盖</small></div>
+        </div>
+        <div class="hobby-photos">
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172537_33_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172538_34_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172540_36_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172543_38_6.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="hobby-card reveal">
+        <div class="hobby-head s-lemon">
+          <svg><use href="#flower"/></svg>
+          <div class="hobby-txt"><b>美照</b><small>每一帧都好看</small></div>
+        </div>
+        <div class="hobby-photos">
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172516_14_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172522_19_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172526_23_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172527_24_6.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="hobby-card reveal d1">
+        <div class="hobby-head s-sky">
+          <svg><use href="#sparkle"/></svg>
+          <div class="hobby-txt"><b>美食</b><small>干饭人干饭魂</small></div>
+        </div>
+        <div class="hobby-photos">
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819172551_45_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819192401_59_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819192422_60_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819193347_62_6.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="hobby-card reveal d2">
+        <div class="hobby-head s-pink">
+          <svg><use href="#paw"/></svg>
+          <div class="hobby-txt"><b>游戏</b><small>开黑走起</small></div>
+        </div>
+        <div class="hobby-photos">
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172547_42_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172548_43_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172552_46_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172559_52_6.jpg" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 相册 ================= -->
+<section class="sec" id="gallery">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-icon"><svg><use href="#flower"/></svg></span>
+      <h2>相册</h2>
+      <span class="sec-en">Gallery</span>
+    </div>
+    <div class="gallery">
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172500_1_6.jpg" alt=""></div><p class="cap">回忆 · 01</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172502_2_6.jpg" alt=""></div><p class="cap">回忆 · 02</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172503_3_6.jpg" alt=""></div><p class="cap">回忆 · 03</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172505_5_6.jpg" alt=""></div><p class="cap">回忆 · 04</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172506_6_6.jpg" alt=""></div><p class="cap">回忆 · 05</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172507_7_6.jpg" alt=""></div><p class="cap">回忆 · 06</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172508_8_6.jpg" alt=""></div><p class="cap">回忆 · 07</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172511_10_6.jpg" alt=""></div><p class="cap">回忆 · 08</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172513_11_6.jpg" alt=""></div><p class="cap">回忆 · 09</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172515_12_6.jpg" alt=""></div><p class="cap">回忆 · 10</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172516_14_6.jpg" alt=""></div><p class="cap">回忆 · 11</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172518_15_6.jpg" alt=""></div><p class="cap">回忆 · 12</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172519_16_6.jpg" alt=""></div><p class="cap">回忆 · 13</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172520_17_6.jpg" alt=""></div><p class="cap">回忆 · 14</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172521_18_6.jpg" alt=""></div><p class="cap">回忆 · 15</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172522_19_6.jpg" alt=""></div><p class="cap">回忆 · 16</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172523_20_6.jpg" alt=""></div><p class="cap">回忆 · 17</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172524_21_6.jpg" alt=""></div><p class="cap">回忆 · 18</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172525_22_6.jpg" alt=""></div><p class="cap">回忆 · 19</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172526_23_6.jpg" alt=""></div><p class="cap">回忆 · 20</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172527_24_6.jpg" alt=""></div><p class="cap">回忆 · 21</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172528_25_6.jpg" alt=""></div><p class="cap">回忆 · 22</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172529_26_6.jpg" alt=""></div><p class="cap">回忆 · 23</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172530_27_6.jpg" alt=""></div><p class="cap">回忆 · 24</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172531_28_6.jpg" alt=""></div><p class="cap">回忆 · 25</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172533_29_6.jpg" alt=""></div><p class="cap">回忆 · 26</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172534_30_6.jpg" alt=""></div><p class="cap">回忆 · 27</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172535_31_6.jpg" alt=""></div><p class="cap">回忆 · 28</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172542_37_6.jpg" alt=""></div><p class="cap">回忆 · 29</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><video src="照片/相册照片/269beed6158818445ba2720929826b63.mp4" controls muted loop playsinline preload="metadata"></video></div><p class="cap">回忆 · 30</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><video src="照片/相册照片/3137f8758b543125e82685f1c034930f.mp4" controls muted loop playsinline preload="metadata"></video></div><p class="cap">回忆 · 31</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><video src="照片/相册照片/60166a83fdd4b17bde61e45550162df3.mp4" controls muted loop playsinline preload="metadata"></video></div><p class="cap">回忆 · 32</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= 留言 & 联系 ================= -->
+<section class="sec" id="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-icon"><svg><use href="#heart"/></svg></span>
+      <h2>老易寄语</h2>
+      <span class="sec-en">Best Wishes</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card card reveal">
+        <h3>🐾 给我留言</h3>
+        <div class="guest-note">小家怡七夕快乐，天天开心，萌爆世界！</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 页脚 ================= -->
+<footer>
+  <div class="paw-row"><svg><use href="#paw"/></svg><svg><use href="#paw"/></svg><svg><use href="#paw"/></svg></div>
+  <p>康家怡の小世界 · 用 ♥ 和 🐾 制作 · 2026</p>
+</footer>
+
+<!-- ================= 猫咪伴游 & 悬浮按钮 ================= -->
+<div class="mascot" id="mascot" title="戳戳我~">
+  <span class="cat-bg"></span>
+  <svg><use href="#cat"/></svg>
+  <span class="bubble" id="mascotBubble">喵~ 欢迎来玩！</span>
+</div>
+
+<div class="floating-btns">
+  <button class="fbtn" id="bgmBtn" title="背景音乐">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v11"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="15" r="3"/></svg>
+  </button>
+  <button class="fbtn" id="toTop" title="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<audio id="bgm" src="BGM/网站BGM2.m4a" loop preload="none"></audio>
+
+<script>
+(function(){
+  /* 移动端菜单 */
+  var navToggle=document.getElementById('navToggle');
+  navToggle.addEventListener('click',function(){document.body.classList.toggle('menu-open');});
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click',function(){document.body.classList.remove('menu-open');});
+  });
+
+  /* 导航高亮 + 滚动监听 */
+  var links=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var sections=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    var y=window.scrollY;
+    toTop.classList.toggle('show',y>600);
+    var cur=0;
+    sections.forEach(function(s,i){ if(s && s.offsetTop-140<=y) cur=i; });
+    links.forEach(function(a,i){ a.classList.toggle('on',i===cur); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  /* 回到顶部 */
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  /* 滚动进场动画 */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  /* 猫咪伴游 - 点击冒泡 */
+  var mascot=document.getElementById('mascot');
+  var bubble=document.getElementById('mascotBubble');
+  var msgs=['喵~ 欢迎来玩！','今天也要元气满满哦','要陪我一起追番吗？','(=^･ω･^=)','来摸一下爪爪？','猫生理想：躺平晒太阳'];
+  var mi=0,bubbleTimer;
+  function showBubble(){
+    bubble.textContent=msgs[mi%msgs.length];mi++;
+    bubble.classList.add('show');
+    clearTimeout(bubbleTimer);
+    bubbleTimer=setTimeout(function(){bubble.classList.remove('show');},2600);
+  }
+  mascot.addEventListener('click',showBubble);
+  setTimeout(showBubble,1200);
+
+  /* BGM 播放 / 暂停 */
+  var bgmBtn=document.getElementById('bgmBtn');
+  var bgm=document.getElementById('bgm');
+  var toast=document.getElementById('toast');
+  var toastTimer;
+  function say(t){ toast.textContent=t; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(function(){toast.classList.remove('show');},2200); }
+  bgmBtn.addEventListener('click',function(){
+    if(bgm.paused){
+      bgm.play().then(function(){ bgmBtn.classList.add('playing'); say('🎵 背景音乐播放中'); })
+        .catch(function(){ say('⚠️ 播放失败，请点击重试'); });
+    }else{
+      bgm.pause(); bgmBtn.classList.remove('playing'); say('⏸ 背景音乐已暂停');
+    }
+  });
+
+  /* 贴纸轻微摆动 */
+  document.querySelectorAll('.polaroid').forEach(function(el){
+    el.style.animation='sway '+(5+Math.random()*3).toFixed(1)+'s ease-in-out infinite';
+  });
+
+  /* 老易寄语 —— 逐字拆分，做循环弹跳动画 */
+  var note=document.querySelector('.guest-note');
+  if(note){
+    note.innerHTML='<span class="txt">'+note.textContent.trim().split('').map(function(ch,i){
+      return '<span class="ch" style="--i:'+i+'">'+ch+'</span>';
+    }).join('')+'</span>';
+  }
+
+  /* 注册 Service Worker（离线能力，file:// 下自动跳过） */
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('sw.js').catch(function(){});
+    });
+  }
+})();
+</script>
+</body>
+</html>

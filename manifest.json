@@ -1,0 +1,20 @@
+{
+  "name": "康家怡の小世界",
+  "short_name": "康家怡",
+  "description": "康家怡的个人网站 —— 准大学生，喜欢小猫和追剧。",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF9F2",
+  "theme_color": "#FFAFC5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
