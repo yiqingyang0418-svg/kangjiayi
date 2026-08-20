@@ -109,7 +109,7 @@ project:
 4. **颜色统一用 CSS 变量**——不硬编码色值
 5. **动效走 transform/opacity**，尊重 `prefers-reduced-motion` 降级
 6. **真实照片/素材**放入 `照片/` 下对应子目录，转 WebP（长边 1080、q82）后替换 `.hobby-ph img` / `.polaroid .ph img` 的 src 即可；SVG 符号无需改动
-7. **部署**：`git push origin main` → GitHub Pages 自动部署，1-2 分钟后 `https://yiqingyang0418-svg.github.io/kangjiayi/` 生效
+7. **部署**：`git push origin main` → GitHub Pages 自动部署，1-2 分钟后 `https://yiqingyang0418-svg.github.io/kangjiayi/` 生效（本机 GitHub 直连被墙，需走本机代理 `http://127.0.0.1:7897`，本项目已 repo 级配置 `http.proxy`/`https.proxy`，详见 `deployment-and-sharing` 记忆）
 
 ## 项目标识约定
 
@@ -195,6 +195,10 @@ project:
 - **图片加速**：55 张微信原图用 sharp 转 WebP（长边 1080、q82），15.9MB → 4.3MB（↓72%）；`index.html` 全站 `_6.jpg`→`_6.webp`（55 处，`og-image.jpg` 保留 jpg）；封面头像加 `fetchpriority="high"`；JS 加 `img.decoding='async'`
 - 原 `.jpg` 保留不删（备份）；sw 缓存版本 v8→v9 + 预缓存 `./BGM/bgm.mp3`
 
+### 2026-08-20 · 维护：文档同步 + 部署走代理
+- 修正「当前状态」小节日期至 2026-08-20，补 BGM（`bgm.mp3` 主 + `m4a` 回退）与「55 张图片转 WebP」描述
+- 本机 GitHub 直连被墙，`康家怡` 仓库已 repo 级配置 git 代理 `http://127.0.0.1:7897`（Vortex 客户端）；`deployment-and-sharing` 记忆已补记
+
 ## 待办 / 待补充清单
 
 ### 内容素材（已完成 ✅ 2026-08-19）
@@ -220,7 +224,7 @@ project:
 
 ### 修改 PWA 信息
 - `manifest.json`：`name`、`short_name`、`description`、`theme_color`
-- `sw.js`：`CACHE`（更新时递增版本号，如 `kangjiayi-v8`）
+- `sw.js`：`CACHE`（更新时递增版本号，当前 `kangjiayi-v9`）
 
 ## 新会话接手指引
 
