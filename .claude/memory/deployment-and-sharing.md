@@ -19,6 +19,7 @@ GitHub 仓库：`https://github.com/yiqingyang0418-svg/kangjiayi.git`
 - 只需 `git push origin main`，1-2 分钟后自动生效
 - 本地修改不会自动同步到线上——必须 commit + push
 - 仓库为 **public**（GitHub Pages 免费版要求，且分享本身需要公开访问）
+- **推送需走代理**：本机 GitHub 直连被墙（`github.com:443` 连不上），`git push` 前需经本机代理 `http://127.0.0.1:7897`（Vortex 客户端 `com.vortex.helper`）。本项目已 repo 级配置 `http.proxy`/`https.proxy`；若换端口或关闭代理，推送会失败，需相应调整或 `git config --unset http.proxy`
 
 ## 微信分享卡片
 
