@@ -109,7 +109,7 @@ project:
 4. **颜色统一用 CSS 变量**——不硬编码色值
 5. **动效走 transform/opacity**，尊重 `prefers-reduced-motion` 降级
 6. **真实照片/素材**放入 `照片/` 下对应子目录，转 WebP（长边 1080、q82）后替换 `.hobby-ph img` / `.polaroid .ph img` 的 src 即可；SVG 符号无需改动
-7. **部署**：`git push origin main` → GitHub Pages 自动部署，1-2 分钟后 `https://yiqingyang0418-svg.github.io/kangjiayi/` 生效（本机 GitHub 直连被墙，需走本机代理 `http://127.0.0.1:7897`，本项目已 repo 级配置 `http.proxy`/`https.proxy`，详见 `deployment-and-sharing` 记忆）
+7. **部署**：`git push origin main` → GitHub Pages 自动部署，1-2 分钟后 `https://yiqingyang0418-svg.github.io/kangjiayi/` 生效（本机 GitHub 直连被墙，需走本机代理 `http://127.0.0.1:7897`，本项目已 repo 级配置 `http.proxy`/`https.proxy`，详见 `deployment-and-sharing` 记忆；**已配置自动同步 Stop 钩子，改完回合结束自动 commit+push，通常无需手动 push**，详见 `auto-sync-hook` 记忆）
 
 ## 项目标识约定
 

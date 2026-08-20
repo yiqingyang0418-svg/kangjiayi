@@ -17,7 +17,7 @@ GitHub 仓库：`https://github.com/yiqingyang0418-svg/kangjiayi.git`
 - GitHub Pages 从 `main` 分支根目录自动部署
 - **没有** CI/CD pipeline、没有 gh-pages 分支、没有构建步骤
 - 只需 `git push origin main`，1-2 分钟后自动生效
-- 本地修改不会自动同步到线上——必须 commit + push
+- 本地修改原本需手动 commit + push；**2026-08-20 起已配置自动同步 Stop 钩子**，Claude 改完回合结束自动 push（详见 [[auto-sync-hook]]），手动 push 仍可作为兜底
 - 仓库为 **public**（GitHub Pages 免费版要求，且分享本身需要公开访问）
 - **推送需走代理**：本机 GitHub 直连被墙（`github.com:443` 连不上），`git push` 前需经本机代理 `http://127.0.0.1:7897`（Vortex 客户端 `com.vortex.helper`）。本项目已 repo 级配置 `http.proxy`/`https.proxy`；若换端口或关闭代理，推送会失败，需相应调整或 `git config --unset http.proxy`
 
@@ -40,4 +40,4 @@ GitHub 仓库：`https://github.com/yiqingyang0418-svg/kangjiayi.git`
 3. `git push origin main`
 4. 告知用户 1-2 分钟后 `https://yiqingyang0418-svg.github.io/kangjiayi/` 生效
 
-Related: [[project-identifier-convention]] [[no-build-tools-pwa]]
+Related: [[project-identifier-convention]] [[no-build-tools-pwa]] [[auto-sync-hook]]
