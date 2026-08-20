@@ -1,10 +1,11 @@
 /* 康家怡の小世界 · Service Worker —— 离线缓存 */
-const CACHE = 'kangjiayi-v8';
+const CACHE = 'kangjiayi-v9';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './images/icon.svg'
+  './images/icon.svg',
+  './BGM/bgm.mp3'
 ];
 
 self.addEventListener('install', (e) => {

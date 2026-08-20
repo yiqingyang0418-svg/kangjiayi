@@ -265,11 +265,18 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
   .nav-links a{font-size:17px;padding:12px 16px}
   .gallery{grid-template-columns:1fr 1fr}
   .hero-tape{display:none}
+  .hero{min-height:100vh;min-height:100svh;padding:96px 16px 48px}
+  .hero-avatar{width:116px;height:116px;margin-bottom:20px}
+  .f1{top:13%;left:3%;width:34px}
+  .f2{top:17%;right:3%;width:30px}
+  .f4{top:auto;bottom:16%;right:5%;width:34px}
+  .f3,.f5,.f6{display:none}
 }
 @media(max-width:520px){
   .gallery{grid-template-columns:1fr}
   .rows{grid-template-columns:1fr}
   .hobby-grid{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(32px,9.5vw,56px)}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -391,7 +398,7 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
     <div class="hero-avatar">
       <span class="ring"></span>
       <span class="avatar-bg"></span>
-      <img src="照片/封面照片/微信图片_20260819172525_22_6.jpg" alt="康家怡的头像">
+      <img src="照片/封面照片/微信图片_20260819172525_22_6.webp" alt="康家怡的头像" fetchpriority="high">
     </div>
     <p class="hi">HI THERE ~</p>
     <h1>康家怡の小世界</h1>
@@ -420,7 +427,7 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
       <div class="about-photo reveal">
         <div class="pic">
           <span class="tape"></span>
-          <img src="照片/“关于我”人物照片/微信图片_20260819172527_24_6.jpg" alt="康家怡的照片">
+          <img src="照片/“关于我”人物照片/微信图片_20260819172527_24_6.webp" alt="康家怡的照片">
         </div>
         <p class="cap">♪ 元气少女康家怡 ♪</p>
       </div>
@@ -462,10 +469,10 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
           <div class="hobby-txt"><b>撸猫</b><small>人生第一大事</small></div>
         </div>
         <div class="hobby-photos">
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819172600_53_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192050_54_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192327_58_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192436_61_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819172600_53_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192050_54_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192327_58_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/撸猫/微信图片_20260819192436_61_6.webp" alt=""></div>
         </div>
       </div>
       <div class="hobby-card reveal d1">
@@ -474,10 +481,10 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
           <div class="hobby-txt"><b>追剧</b><small>追剧停不下来</small></div>
         </div>
         <div class="hobby-photos">
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819172553_47_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819172556_50_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819192310_57_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819193410_63_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819172553_47_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819172556_50_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819192310_57_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/追剧/微信图片_20260819193410_63_6.webp" alt=""></div>
         </div>
       </div>
       <div class="hobby-card reveal d2">
@@ -486,10 +493,10 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
           <div class="hobby-txt"><b>痞帅</b><small>酷盖本盖</small></div>
         </div>
         <div class="hobby-photos">
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172537_33_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172538_34_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172540_36_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172543_38_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172537_33_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172538_34_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172540_36_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/痞帅/微信图片_20260819172543_38_6.webp" alt=""></div>
         </div>
       </div>
       <div class="hobby-card reveal">
@@ -498,10 +505,10 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
           <div class="hobby-txt"><b>美照</b><small>每一帧都好看</small></div>
         </div>
         <div class="hobby-photos">
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172516_14_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172522_19_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172526_23_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172527_24_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172516_14_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172522_19_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172526_23_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美照/微信图片_20260819172527_24_6.webp" alt=""></div>
         </div>
       </div>
       <div class="hobby-card reveal d1">
@@ -510,10 +517,10 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
           <div class="hobby-txt"><b>美食</b><small>干饭人干饭魂</small></div>
         </div>
         <div class="hobby-photos">
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819172551_45_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819192401_59_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819192422_60_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819193347_62_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819172551_45_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819192401_59_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819192422_60_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/美食/微信图片_20260819193347_62_6.webp" alt=""></div>
         </div>
       </div>
       <div class="hobby-card reveal d2">
@@ -522,10 +529,10 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
           <div class="hobby-txt"><b>游戏</b><small>开黑走起</small></div>
         </div>
         <div class="hobby-photos">
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172547_42_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172548_43_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172552_46_6.jpg" alt=""></div>
-          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172559_52_6.jpg" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172547_42_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172548_43_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172552_46_6.webp" alt=""></div>
+          <div class="hobby-ph"><img src="照片/”小世界“板块照片/游戏/微信图片_20260819172559_52_6.webp" alt=""></div>
         </div>
       </div>
     </div>
@@ -542,35 +549,35 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
       <span class="sec-en">Gallery</span>
     </div>
     <div class="gallery">
-      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172500_1_6.jpg" alt=""></div><p class="cap">回忆 · 01</p></div>
-      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172502_2_6.jpg" alt=""></div><p class="cap">回忆 · 02</p></div>
-      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172503_3_6.jpg" alt=""></div><p class="cap">回忆 · 03</p></div>
-      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172505_5_6.jpg" alt=""></div><p class="cap">回忆 · 04</p></div>
-      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172506_6_6.jpg" alt=""></div><p class="cap">回忆 · 05</p></div>
-      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172507_7_6.jpg" alt=""></div><p class="cap">回忆 · 06</p></div>
-      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172508_8_6.jpg" alt=""></div><p class="cap">回忆 · 07</p></div>
-      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172511_10_6.jpg" alt=""></div><p class="cap">回忆 · 08</p></div>
-      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172513_11_6.jpg" alt=""></div><p class="cap">回忆 · 09</p></div>
-      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172515_12_6.jpg" alt=""></div><p class="cap">回忆 · 10</p></div>
-      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172516_14_6.jpg" alt=""></div><p class="cap">回忆 · 11</p></div>
-      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172518_15_6.jpg" alt=""></div><p class="cap">回忆 · 12</p></div>
-      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172519_16_6.jpg" alt=""></div><p class="cap">回忆 · 13</p></div>
-      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172520_17_6.jpg" alt=""></div><p class="cap">回忆 · 14</p></div>
-      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172521_18_6.jpg" alt=""></div><p class="cap">回忆 · 15</p></div>
-      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172522_19_6.jpg" alt=""></div><p class="cap">回忆 · 16</p></div>
-      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172523_20_6.jpg" alt=""></div><p class="cap">回忆 · 17</p></div>
-      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172524_21_6.jpg" alt=""></div><p class="cap">回忆 · 18</p></div>
-      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172525_22_6.jpg" alt=""></div><p class="cap">回忆 · 19</p></div>
-      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172526_23_6.jpg" alt=""></div><p class="cap">回忆 · 20</p></div>
-      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172527_24_6.jpg" alt=""></div><p class="cap">回忆 · 21</p></div>
-      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172528_25_6.jpg" alt=""></div><p class="cap">回忆 · 22</p></div>
-      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172529_26_6.jpg" alt=""></div><p class="cap">回忆 · 23</p></div>
-      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172530_27_6.jpg" alt=""></div><p class="cap">回忆 · 24</p></div>
-      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172531_28_6.jpg" alt=""></div><p class="cap">回忆 · 25</p></div>
-      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172533_29_6.jpg" alt=""></div><p class="cap">回忆 · 26</p></div>
-      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172534_30_6.jpg" alt=""></div><p class="cap">回忆 · 27</p></div>
-      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172535_31_6.jpg" alt=""></div><p class="cap">回忆 · 28</p></div>
-      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172542_37_6.jpg" alt=""></div><p class="cap">回忆 · 29</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172500_1_6.webp" alt=""></div><p class="cap">回忆 · 01</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172502_2_6.webp" alt=""></div><p class="cap">回忆 · 02</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172503_3_6.webp" alt=""></div><p class="cap">回忆 · 03</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172505_5_6.webp" alt=""></div><p class="cap">回忆 · 04</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172506_6_6.webp" alt=""></div><p class="cap">回忆 · 05</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172507_7_6.webp" alt=""></div><p class="cap">回忆 · 06</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172508_8_6.webp" alt=""></div><p class="cap">回忆 · 07</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172511_10_6.webp" alt=""></div><p class="cap">回忆 · 08</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172513_11_6.webp" alt=""></div><p class="cap">回忆 · 09</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172515_12_6.webp" alt=""></div><p class="cap">回忆 · 10</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172516_14_6.webp" alt=""></div><p class="cap">回忆 · 11</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172518_15_6.webp" alt=""></div><p class="cap">回忆 · 12</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172519_16_6.webp" alt=""></div><p class="cap">回忆 · 13</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172520_17_6.webp" alt=""></div><p class="cap">回忆 · 14</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172521_18_6.webp" alt=""></div><p class="cap">回忆 · 15</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172522_19_6.webp" alt=""></div><p class="cap">回忆 · 16</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172523_20_6.webp" alt=""></div><p class="cap">回忆 · 17</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172524_21_6.webp" alt=""></div><p class="cap">回忆 · 18</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172525_22_6.webp" alt=""></div><p class="cap">回忆 · 19</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172526_23_6.webp" alt=""></div><p class="cap">回忆 · 20</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172527_24_6.webp" alt=""></div><p class="cap">回忆 · 21</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172528_25_6.webp" alt=""></div><p class="cap">回忆 · 22</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172529_26_6.webp" alt=""></div><p class="cap">回忆 · 23</p></div>
+      <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><img src="照片/相册照片/微信图片_20260819172530_27_6.webp" alt=""></div><p class="cap">回忆 · 24</p></div>
+      <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><img src="照片/相册照片/微信图片_20260819172531_28_6.webp" alt=""></div><p class="cap">回忆 · 25</p></div>
+      <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><img src="照片/相册照片/微信图片_20260819172533_29_6.webp" alt=""></div><p class="cap">回忆 · 26</p></div>
+      <div class="polaroid reveal d2" style="--rot:-2deg"><div class="ph gp3"><img src="照片/相册照片/微信图片_20260819172534_30_6.webp" alt=""></div><p class="cap">回忆 · 27</p></div>
+      <div class="polaroid reveal" style="--rot:2deg"><div class="ph gp4"><img src="照片/相册照片/微信图片_20260819172535_31_6.webp" alt=""></div><p class="cap">回忆 · 28</p></div>
+      <div class="polaroid reveal d1" style="--rot:-3deg"><div class="ph gp5"><img src="照片/相册照片/微信图片_20260819172542_37_6.webp" alt=""></div><p class="cap">回忆 · 29</p></div>
       <div class="polaroid reveal d2" style="--rot:4deg"><div class="ph gp6"><video src="照片/相册照片/269beed6158818445ba2720929826b63.mp4" controls muted loop playsinline preload="metadata"></video></div><p class="cap">回忆 · 30</p></div>
       <div class="polaroid reveal" style="--rot:-4deg"><div class="ph gp1"><video src="照片/相册照片/3137f8758b543125e82685f1c034930f.mp4" controls muted loop playsinline preload="metadata"></video></div><p class="cap">回忆 · 31</p></div>
       <div class="polaroid reveal d1" style="--rot:3deg"><div class="ph gp2"><video src="照片/相册照片/60166a83fdd4b17bde61e45550162df3.mp4" controls muted loop playsinline preload="metadata"></video></div><p class="cap">回忆 · 32</p></div>
@@ -620,7 +627,10 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
 
 <div class="toast" id="toast"></div>
 
-<audio id="bgm" src="BGM/网站BGM2.m4a" loop preload="none"></audio>
+<audio id="bgm" loop preload="metadata">
+  <source src="BGM/bgm.mp3" type="audio/mpeg">
+  <source src="BGM/网站BGM2.m4a" type="audio/mp4">
+</audio>
 
 <script>
 (function(){
@@ -653,6 +663,9 @@ footer .paw-row svg{width:20px;height:20px;color:var(--sakura)}
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  /* 图片异步解码，避免阻塞首屏渲染 */
+  document.querySelectorAll('img').forEach(function(img){ img.decoding='async'; });
 
   /* 猫咪伴游 - 点击冒泡 */
   var mascot=document.getElementById('mascot');

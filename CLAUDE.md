@@ -23,7 +23,7 @@ project:
 | **部署** | GitHub Pages：`https://yiqingyang0418-svg.github.io/kangjiayi/`（main 分支自动部署） |
 | **项目标识** | `kangjiayi-journal` — 所有项目文件与记忆均携带此标记 |
 | **设计主题** | 日系少女手账（Kawaii Journal）— 软萌治愈系 |
-| **当前状态** | v8 上线部署 + 微信分享卡片（2026-08-19），5 板块，档案/兴趣/照片/BGM 全部就位 |
+| **当前状态** | v9 移动端修复（2026-08-20）：封面不重叠 + BGM 转 MP3 可播 + 图片转 WebP 加速（15.9MB→4.3MB） |
 
 ## 文件结构
 
@@ -37,10 +37,12 @@ project:
 ├── manifest.json       ← PWA 清单（可添加到主屏幕）
 ├── sw.js               ← Service Worker（离线缓存）
 ├── images/
-│   └── icon.svg        ← 站点/PWA 图标（猫脸）
+│   ├── icon.svg        ← 站点/PWA 图标（猫脸）
+│   └── og-image.jpg    ← 微信分享卡片封面图（从 照片/封面照片/ 复制的英文名副本）
 ├── BGM/
-│   └── 网站BGM2.m4a    ← 背景音乐（用户提供，直接引用）
-└── 照片/               ← 真实照片（用户按板块整理，直接引用，未复制进 images/）
+│   ├── 网站BGM2.m4a    ← 背景音乐（用户提供原始，作 mp3 回退源）
+│   └── bgm.mp3         ← 背景音乐（v9 转码，手机兼容主用）
+└── 照片/               ← 真实照片（用户按板块整理，直接引用；仅 og-image.jpg 额外复制进 images/）
     ├── 封面照片 / “关于我”人物照片 / 相册照片
     └── ”小世界“板块照片（撸猫·追剧·痞帅·美照·美食·游戏）
 ```
@@ -132,6 +134,7 @@ project:
 - 响应式适配（桌面 / 平板 / 手机）
 - PWA 离线支持（manifest.json + sw.js + icon.svg）
 - 无障碍（prefers-reduced-motion）
+- GitHub Pages 上线部署 + 微信分享卡片（og 标签 / apple-touch-icon / og-image.jpg）
 
 ### 内容现状
 - 星座/城市/身份/梦想已填入；年龄「永远 18 岁」；「关于我」档案卡有彩色图标徽章 + 底部 4 个彩色标签；「小世界」6 爱好卡片墙（各 4 张真实照片，「化妆」已改名「痞帅」）；「相册」29 张照片 + 3 段视频填满 32 格；第 5 板块「老易寄语」；封面/关于我/小世界/相册照片已全部填充，BGM 已接入（`BGM/网站BGM2.m4a`）
@@ -186,6 +189,12 @@ project:
 - 新增 `.claude/memory/deployment-and-sharing.md`（部署地址 + 用户触发词）
 - sw 缓存版本 v7→v8
 
+### 2026-08-20 · v9 移动端修复（封面重叠 / 音乐播放 / 图片加速）
+- **封面重叠**：`@media(max-width:760px)` 内 `.hero` 改 `min-height:100svh` + 缩 padding、头像 150→116px；漂浮贴纸重排到四角并隐藏中间 3 枚（`.f3/.f5/.f6`）；`@media(max-width:520px)` 微调 `.hero h1` 字号
+- **音乐播放**：`BGM/网站BGM2.m4a`（AAC 封装、moov atom 靠后须整段下载）→ 用 ffmpeg-static 转码 `BGM/bgm.mp3`（128k）；`<audio>` 改双 `<source>`（mp3 主 + m4a 回退）+ `preload="metadata"`，解决手机"点了没声"
+- **图片加速**：55 张微信原图用 sharp 转 WebP（长边 1080、q82），15.9MB → 4.3MB（↓72%）；`index.html` 全站 `_6.jpg`→`_6.webp`（55 处，`og-image.jpg` 保留 jpg）；封面头像加 `fetchpriority="high"`；JS 加 `img.decoding='async'`
+- 原 `.jpg` 保留不删（备份）；sw 缓存版本 v8→v9 + 预缓存 `./BGM/bgm.mp3`
+
 ## 待办 / 待补充清单
 
 ### 内容素材（已完成 ✅ 2026-08-19）
@@ -197,6 +206,10 @@ project:
 - [x] 留言板已改为静态「老易寄语」祝福（内容：小家怡七夕快乐，天天开心，萌爆世界！）
 - [x] BGM 音频（`BGM/网站BGM2.m4a` + `#bgmBtn` 播放/暂停逻辑）
 
+### 部署上线（已完成 ✅ 2026-08-19）
+- [x] GitHub Pages 部署（`https://yiqingyang0418-svg.github.io/kangjiayi/`）
+- [x] 微信分享卡片（og 标签 + apple-touch-icon + `images/og-image.jpg`）
+
 ## 修改指南
 
 ### 替换真实照片
@@ -207,7 +220,7 @@ project:
 
 ### 修改 PWA 信息
 - `manifest.json`：`name`、`short_name`、`description`、`theme_color`
-- `sw.js`：`CACHE`（更新时递增版本号，如 `kangjiayi-v7`）
+- `sw.js`：`CACHE`（更新时递增版本号，如 `kangjiayi-v8`）
 
 ## 新会话接手指引
 
