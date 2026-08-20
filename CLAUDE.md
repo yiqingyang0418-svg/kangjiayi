@@ -23,7 +23,7 @@ project:
 | **部署** | GitHub Pages：`https://yiqingyang0418-svg.github.io/kangjiayi/`（main 分支自动部署） |
 | **项目标识** | `kangjiayi-journal` — 所有项目文件与记忆均携带此标记 |
 | **设计主题** | 日系少女手账（Kawaii Journal）— 软萌治愈系 |
-| **当前状态** | v9 移动端修复（2026-08-20）：封面不重叠 + BGM 转 MP3 可播 + 图片转 WebP 加速（15.9MB→4.3MB） |
+| **当前状态** | v10 移动端图标截断修复 + 自动同步（2026-08-20）：微信端图标不再需要缩小即可见；改完项目文件自动 push 上线 |
 
 ## 文件结构
 
@@ -199,6 +199,11 @@ project:
 - 修正「当前状态」小节日期至 2026-08-20，补 BGM（`bgm.mp3` 主 + `m4a` 回退）与「55 张图片转 WebP」描述
 - 本机 GitHub 直连被墙，`康家怡` 仓库已 repo 级配置 git 代理 `http://127.0.0.1:7897`（Vortex 客户端）；`deployment-and-sharing` 记忆已补记
 
+### 2026-08-20 · v10 移动端图标截断修复 + 自动同步
+- **移动端图标截断**：微信端打开后右上角汉堡菜单、BGM、小猫被横向溢出推出屏幕外、需捏合缩小才能看到。根因：横向溢出把布局视口撑宽 + `overflow-x:hidden` 只加在 `body`。改法：viewport 加 `viewport-fit=cover`；`html` 加 `overflow-x:hidden` + `-webkit-text-size-adjust:100%;text-size-adjust:100%`（防微信安卓 X5 字体放大）；`.brand` 加 `min-width:0` + 文字省略 `.brand span{overflow:hidden;text-overflow:ellipsis}`；`.nav-toggle` 加 `flex:none`；`@media(max-width:520px)` 缩窄屏站名；`.mascot`/`.floating-btns` 用 `env(safe-area-inset-*)` 适配刘海屏
+- sw 缓存版本 v9→v10（强制微信端刷新缓存拿到修复）
+- **自动同步**：配置 Claude Code `Stop` 钩子，改完项目文件自动 `commit + push`（康家怡 + 易德忠两仓库），无需每次手动提醒；易德忠补 repo 级 git 代理
+
 ## 待办 / 待补充清单
 
 ### 内容素材（已完成 ✅ 2026-08-19）
@@ -224,7 +229,7 @@ project:
 
 ### 修改 PWA 信息
 - `manifest.json`：`name`、`short_name`、`description`、`theme_color`
-- `sw.js`：`CACHE`（更新时递增版本号，当前 `kangjiayi-v9`）
+- `sw.js`：`CACHE`（更新时递增版本号，当前 `kangjiayi-v10`）
 
 ## 新会话接手指引
 

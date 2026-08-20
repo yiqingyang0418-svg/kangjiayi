@@ -1,5 +1,5 @@
 /* 康家怡の小世界 · Service Worker —— 离线缓存 */
-const CACHE = 'kangjiayi-v9';
+const CACHE = 'kangjiayi-v10';
 const ASSETS = [
   './',
   './index.html',

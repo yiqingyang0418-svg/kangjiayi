@@ -14,3 +14,5 @@ project: kangjiayi-journal
 - [v7 照片填充 + 标签 + BGM](.claude/memory/photos-bgm-fill.md) — 关于我 4 标签、照片按板块填充（29 图 + 3 视频）、BGM 接入
 - [部署与微信分享](.claude/memory/deployment-and-sharing.md) — GitHub Pages 部署（链接 https://yiqingyang0418-svg.github.io/kangjiayi/），推送需走本机代理 127.0.0.1:7897
 - [v9 移动端修复](.claude/memory/mobile-fixes-v9.md) — 封面不重叠 + BGM 转 MP3 + 图片转 WebP 加速（15.9MB→4.3MB）
+- [v10 移动端图标截断修复](.claude/memory/mobile-icon-cutoff-v10.md) — 微信端汉堡/BGM/小猫横向溢出截断修复 + sw v10
+- [自动同步钩子](.claude/memory/auto-sync-hook.md) — Claude Stop 钩子自动 commit+push 康家怡+易德忠，改完即上线
