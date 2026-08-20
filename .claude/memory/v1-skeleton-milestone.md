@@ -2,7 +2,7 @@
 project: kangjiayi-journal
 ---
 
-# 里程碑与进度记录（v1 → v7）
+# 里程碑与进度记录（v1 → v9）
 
 ## v1 · 2026-08-19 · 骨架完成（历史）
 - 9 个板块骨架（hero → contact），内容全部占位
@@ -47,10 +47,24 @@ project: kangjiayi-journal
 - BGM 接入：`<audio id="bgm" src="BGM/网站BGM2.m4a" loop>` + `#bgmBtn` 播放/暂停切换（`.playing` 高亮 + toast）
 - sw 缓存版本 `v6`→`v7`
 
-## 当前状态（截至 2026-08-19）
+## v8 · 2026-08-19 · 上线部署 + 微信分享卡片
+- 部署到 GitHub Pages：`https://yiqingyang0418-svg.github.io/kangjiayi/`（main 分支根目录自动部署，`git push` 后 1-2 分钟生效）
+- `index.html` `<head>` 新增 Open Graph 元信息（`og:title` / `og:description` / `og:image` / `og:type` / `og:locale`）+ `apple-touch-icon`
+- 封面图复制为 `images/og-image.jpg`（英文文件名，供微信抓取缩略图）
+- 新建 `.claude/memory/deployment-and-sharing.md`；sw 缓存版本 `v7`→`v8`
+
+## v9 · 2026-08-20 · 移动端三项修复
+- **封面重叠**：`@media(max-width:760px)` 内 `.hero` 改 `min-height:100vh;min-height:100svh` + 缩 padding、头像 150→116px；漂浮贴纸重排到四角并隐藏中间 3 枚（`.f3/.f5/.f6`）；`@media(max-width:520px)` 微调 `.hero h1` 字号
+- **音乐播放**：`BGM/网站BGM2.m4a`（AAC 封装、moov atom 靠后须整段下载才可播）→ ffmpeg-static 转码 `BGM/bgm.mp3`（128k）；`<audio>` 改双 `<source>`（mp3 主 + m4a 回退）+ `preload="metadata"`
+- **图片加速**：55 张微信原图用 sharp 转 WebP（长边 1080、q82），15.9MB→4.3MB（↓72%）；`index.html` 全站 `_6.jpg`→`_6.webp`（`og-image.jpg` 保留 jpg）；封面头像加 `fetchpriority="high"`；JS 加 `img.decoding='async'`
+- 原 `.jpg` 保留不删（备份）；sw 缓存版本 `v8`→`v9` + 预缓存 `./BGM/bgm.mp3`
+
+## 当前状态（截至 2026-08-20）
 - 5 个板块：封面 → 关于我 → 小世界 → 相册 → 老易寄语
-- 已全部就位：档案信息 + 「关于我」4 彩色标签 + 「小世界」6 爱好卡片墙（各 4 张真实照片）+ 「相册」29 图 + 3 视频 + 「老易寄语」留言框 + BGM（`BGM/网站BGM2.m4a`）
+- 已全部就位：档案信息 + 「关于我」4 彩色标签 + 「小世界」6 爱好卡片墙（各 4 张真实照片）+ 「相册」29 图 + 3 视频 + 「老易寄语」留言框 + BGM（`BGM/bgm.mp3` 主 + m4a 回退，`preload="metadata"`）
+- 图片已全部转 WebP（55 张，原 jpg 保留备份）；手机端封面不重叠、音乐可播、图片秒载
 - 内容与功能均无待办缺口
+- 已上线部署：GitHub Pages `https://yiqingyang0418-svg.github.io/kangjiayi/` + 微信分享卡片（og 标签）
 
 ## 下一步建议
-内容与功能已就位。后续如需增补：新照片按现有 `.hobby-ph img` / `.polaroid` 模式替换 src 即可；若需 Firefox 也能播放 BGM，另备一份 mp3 并加 `<source>` 回退。
+内容、功能与部署均已就位。后续如需增补：新照片先转 WebP（长边 1080、q82）再按现有 `.hobby-ph img` / `.polaroid` 模式替换 src 即可；改完执行 `git push origin main` 部署上线（详见 [[deployment-and-sharing]]）。

@@ -42,7 +42,7 @@ project:
 ├── BGM/
 │   ├── 网站BGM2.m4a    ← 背景音乐（用户提供原始，作 mp3 回退源）
 │   └── bgm.mp3         ← 背景音乐（v9 转码，手机兼容主用）
-└── 照片/               ← 真实照片（用户按板块整理，直接引用；仅 og-image.jpg 额外复制进 images/）
+└── 照片/               ← 真实照片（用户按板块整理；v9 起以 .webp 引用，原 .jpg 保留备份；仅 og-image.jpg 额外复制进 images/）
     ├── 封面照片 / “关于我”人物照片 / 相册照片
     └── ”小世界“板块照片（撸猫·追剧·痞帅·美照·美食·游戏）
 ```
@@ -98,7 +98,7 @@ project:
 - **拍立得摆动**：JS 为 `.polaroid` 随机设置 `sway` 动画时长
 - **老易寄语逐字弹跳**：留言文字逐字拆成 `<span class="ch">` 做 `charBob` 波浪循环动画（`.guest-note`）
 - **回到顶部**：`#toTop` 滚动超过 600px 显示
-- **BGM 播放**：`#bgmBtn` 播放/暂停 `BGM/网站BGM2.m4a`（`.playing` 高亮 + toast 提示）
+- **BGM 播放**：`#bgmBtn` 播放/暂停 `BGM/bgm.mp3`（主，`preload="metadata"`）+ `BGM/网站BGM2.m4a`（回退）双 `<source>`（`.playing` 高亮 + toast 提示）
 - **PWA 离线**：`manifest.json` + `sw.js`，可添加到主屏幕离线浏览（`file://` 下 SW 自动跳过）
 
 ## 关键约束（修改代码时必须遵守）
@@ -108,7 +108,7 @@ project:
 3. **装饰图形全部内联 SVG**——禁止引入外部装饰图片，保证离线自包含
 4. **颜色统一用 CSS 变量**——不硬编码色值
 5. **动效走 transform/opacity**，尊重 `prefers-reduced-motion` 降级
-6. **真实照片/素材**放入 `images/` 下对应子目录，替换占位块即可；SVG 符号无需改动
+6. **真实照片/素材**放入 `照片/` 下对应子目录，转 WebP（长边 1080、q82）后替换 `.hobby-ph img` / `.polaroid .ph img` 的 src 即可；SVG 符号无需改动
 7. **部署**：`git push origin main` → GitHub Pages 自动部署，1-2 分钟后 `https://yiqingyang0418-svg.github.io/kangjiayi/` 生效
 
 ## 项目标识约定
@@ -213,7 +213,7 @@ project:
 ## 修改指南
 
 ### 替换真实照片
-将素材放入 `images/`，替换对应占位块（如 `.about-photo .pic`、`.polaroid .ph`、`.hobby-ph`）中的 `<svg>` 为 `<img>`。
+将素材放入 `照片/` 对应子目录（新照片先转 WebP：长边 1080、q82），替换对应占位块（如 `.about-photo .pic`、`.polaroid .ph`、`.hobby-ph`）中 `<img>` 的 src 即可。
 
 ### 增删板块
 在对应 `<section>` 增删；同步更新导航 `.nav-links` 中的 `<a>`；若板块数变化，更新本文「页面结构」表与 `sections-structure` 记忆。
